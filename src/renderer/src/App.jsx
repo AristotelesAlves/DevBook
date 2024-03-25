@@ -1,5 +1,4 @@
 import { notas } from "./armazenamento/notas"
-import Conteudo from "./components/Conteudo"
 import Navegacao from "./components/Navegacao"
 import PreviaNotas from "./components/PreviaNotas"
 import EditorText from "./components/EditorText"
@@ -21,7 +20,7 @@ function App() {
           )
         })}
       </Navegacao>
-      <div className="w-full h-full py-2 px-4 bg-zinc-50">
+      <div className="flex-1 h-full py-2 px-4 bg-zinc-700">
         <EditorText/>
       </div>
     </div>

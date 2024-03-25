@@ -8,8 +8,9 @@ export default function FormatacaoTextoCentro({editor}){
     }
 
     return (
-        <div className={`p-2 hover:bg-zinc-700 rounded-lg w-fit h-fit items-center flex ${editor.isActive({ textAlign: 'right' }) ? 'hover:bg-zinc-800 bg-zinc-700' : ''}`}>
-            <button onClick={() => editor.chain().focus().setTextAlign('center').run()} className={editor.isActive({ textAlign: 'center' }) ? 'is-active' : ''}>
+        <div >
+            <button className={`p-2 hover:bg-zinc-700 rounded-lg w-fit h-fit items-center flex ${editor.isActive({ textAlign: 'right' }) ? 'hover:bg-zinc-800 bg-zinc-700' : ''}`}
+              onClick={() => editor.chain().focus().setTextAlign('center').run()} >
                 <TextAlignCenter size={20} />
             </button>
         </div>

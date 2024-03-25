@@ -14,7 +14,7 @@ export default function EditorText(){
     const editor = useEditor({
         editorProps:{
             attributes: {
-                class: "outline-none prose "
+                class: "prose prose-sm sm:prose-lg xl:prose-2xl focus:outline-none text-white prose-h2:text-white prose-h1:text-white w-full break-all mt-10"
             }
         },
         extensions: [
@@ -23,21 +23,33 @@ export default function EditorText(){
                   }),
                 CustomDocument,
                 Heading,
-                TextAlign,
-                
+                TextAlign.configure({
+                    types: ['heading', 'paragraph'],
+                  }),
                 Placeholder.configure({
                     placeholder: 'Write something …',
                   })
             ],
         }
     )
+
+    function genereteText(){
+        if(editor){
+            console.log(editor.getText())
+        }    
+    }
+    // com o editor.getText consigo capturar o texto digitado, com isso eu salvo num arquivo usando o fs. com fs eu consigo criar ler deletar 
+
+
     return ( 
-        <div className='w-full'>
+        <div className='w-full h-full'>
             <MenuEditorTexto editor={editor}/>
             <EditorContent
-                className=' text-black'
+                className=' text-black w-full'
                 editor={editor}
+                attributes={{ br: true }}
             />
+            <button className='text-black' onClick={genereteText}>gera json</button>
         </div>
     )
 }
