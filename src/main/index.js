@@ -17,6 +17,7 @@ function createWindow() {
     trafficLightPosition: {x:15, y:10},
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
+      nodeIntegration: true,
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false
     }
